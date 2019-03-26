@@ -1,0 +1,74 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--<meta charset="UTF-8">-->
+<!--<title>Post for Host</title>-->
+<!--</head>-->
+<!--<body>-->
+
+{% extends "Ucook/1base.html" %}
+
+{% block head %}
+    <style type="text/css">
+        label {
+            width: 100px;
+        }
+.checkbox {
+    margin: 5px;
+}
+    </style>
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="posthost-address">
+        <p>My Address</p>
+        <label>Address 1: </label>
+        <input id="posthost-address-1" type="text"><br>
+        <label>Address 2: </label>
+        <input id="posthost-address-2" type="text"><br>
+        <label>Postal Code: </label>
+        <input id="posthost-postalcode" type="text"><br>
+        <label>City: </label>
+        <input id="posthost-city" type="text"><br>
+        <label>State: </label>
+        <input id="posthost-state" type="text"><br>
+        <p></p>
+    </div>
+
+    <div class="posthost-provide">
+        <p>What I provide</p>
+        <input id="posthost-chinese" type="checkbox" class="checkbox">Chinese
+        <input id="posthost-korean" type="checkbox" class="checkbox">Korean
+        <input id="posthost-american" type="checkbox" class="checkbox">American
+        <input id="posthost-italian" type="checkbox" class="checkbox">Italian
+        <input id="posthost-indian" type="checkbox" class="checkbox">Indian
+        <input id="posthost-japanese" type="checkbox" class="checkbox">Japanese
+        <input id="posthost-mexican" type="checkbox" class="checkbox">Mexican
+        <input id="posthost-thai" type="checkbox" class="checkbox">Thai
+        <input id="posthost-vegetarian" type="checkbox" class="checkbox">Vegetarian
+    </div>
+
+    <br>
+
+    <div class="posthost-need">
+        <p>What I need</p>
+        <input id="posthost-wash" type="checkbox" class="checkbox">Wash Bowl
+        <input id="posthost-ingredients" type="checkbox" class="checkbox">Bring Ingredients
+        <input id="posthost-prepare" type="checkbox" class="checkbox">Prepare Food
+        <input id="posthost-cook" type="checkbox" class="checkbox">Do Cooking
+    </div>
+
+    <br>
+
+    <label>Information:</label>
+    <input id="posthost-information" type="text">
+
+    <br><br>
+    <a href="{% url 'exploreNonHost' %}"><button>Send Post</button></a>
+
+{% endblock %}
+
+<!--</body>-->
+<!--</html>-->

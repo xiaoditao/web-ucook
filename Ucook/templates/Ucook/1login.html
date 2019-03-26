@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        .login {
+            margin-left: 30px;
+            font-size: 20px;
+            color: #243A4D;
+        }
+        #login-nameOfSite {
+            font-size: 30px;
+          }
+        label {
+            cursor: pointer;
+            display: inline-block;
+            padding: 3px 6px;
+            text-align: left;
+            width: 100px;
+            vertical-align: top;
+        }
+    </style>
+    <title>Welcome</title>
+</head>
+<body>
+
+<img id="register-logo" src="../../static/images/ucook.png" alt="logo" width="260" height="260"><br>
+
+
+
+{#{% block content %}#}
+<div class="login">
+
+<span id="login-nameOfSite">UCook</span>
+<br><br>
+
+<form method="post" action="{% url 'login' %}">
+    <table>
+        {% for field in form.visible_fields %}
+            <tr>
+                <td>{{ field.label_tag }}</td>
+                <td>{{ field }}</td>
+                <td class="errorlist">
+                    {% for error in field.errors %} {{ error }} {% endfor %}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% csrf_token %}
+<br>
+    <button type="submit" id="login_button">Login</button>
+</form>
+
+<br>
+<a id="login-register" href="{% url 'register' %}">
+    Register Here
+{#    <button id="login-register">Register Here</button>#}
+</a>
+<br>
+<p>Other way to login:</p>
+<a href="" id="login-gmailLogin">Gmail Login</a><br>
+
+{% for error in form.non_field_errors %}
+    <p class="errorlist">
+        {{ error }}
+    </p>
+{% endfor %}
+
+</div>
+{#{% endblock %}#}
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--<meta charset="UTF-8">-->
+<!--<title>Post for Non-Host</title>-->
+<!--</head>-->
+<!--<body>-->
+
+{% extends "Ucook/1base.html" %}
+{% block head %}
+    <style type="text/css">
+        label {
+            width: 100px;
+        }
+        .checkbox {
+            margin: 5px;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+
+    <div class="postnonhost-provide">
+        <p>What I provide</p>
+        <input id="postnonhost-wash" type="checkbox" class="checkbox">Wash Bowl
+        <input id="postnonhost-ingredients" type="checkbox" class="checkbox">Bring Ingredients
+        <input id="postnonhost-prepare" type="checkbox" class="checkbox">Prepare Food
+        <input id="postnonhost-cook" type="checkbox" class="checkbox">Do Cooking
+    </div>
+
+    <br>
+
+    <div class="postnonhost-need">
+        <p>What I need</p>
+        <input id="postnonhost-chinese" type="checkbox" class="checkbox">Chinese
+        <input id="postnonhost-korean" type="checkbox" class="checkbox">Korean
+        <input id="postnonhost-american" type="checkbox" class="checkbox">American
+        <input id="postnonhost-italian" type="checkbox" class="checkbox">Italian
+        <input id="postnonhost-indian" type="checkbox" class="checkbox">Indian
+        <input id="postnonhost-japanese" type="checkbox" class="checkbox">Japanese
+        <input id="postnonhost-mexican" type="checkbox" class="checkbox">Mexican
+        <input id="postnonhost-thai" type="checkbox" class="checkbox">Thai
+        <input id="postnonhost-vegetarian" type="checkbox" class="checkbox">Vegetarian
+
+    </div>
+
+    <br>
+
+    <label>Information:</label>
+    <input id="posthost-information" type="text">
+
+    <br><br>
+    <a href="{% url 'exploreHost' %}"><button>Send Post</button></a>
+
+{% endblock %}
+
+<!--</body>-->
+<!--</html>-->
